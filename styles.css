@@ -1,0 +1,167 @@
+
+
+body {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background: #000;
+  color: #fff;
+  margin: 0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Fondo estilo humo con líneas suaves */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,0.015),
+    rgba(255,255,255,0.015) 1px,
+    transparent 1px,
+    transparent 10px
+  );
+  animation: slide 60s linear infinite;
+  z-index: -2;
+}
+
+@keyframes slide {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 1000px; }
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 1rem;
+  background: #fff;
+}
+.logo {
+  max-width: 300px;
+  animation: pulse 3s infinite;
+}
+
+/* Pulse */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Secciones */
+section {
+  padding: 2rem;
+  text-align: center;
+}
+h2 {
+  font-size: 2rem;
+  color: #F3AEBB;
+  margin-bottom: 1rem;
+}
+.coming-soon {
+  color: #1F2A3A;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Galería */
+.galeria {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 1rem 0;
+  justify-items: center;
+}
+.galeria img {
+  width: 100%;
+  max-width: 400px;
+  border: 2px solid #F3AEBB;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #1F2A3A;
+  transition: transform 0.3s ease;
+  background: #fff;
+}
+.galeria img:hover {
+  transform: scale(1.03);
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 500px;
+  margin: auto;
+}
+form input, form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #F3AEBB;
+  border-radius: 8px;
+  font-family: inherit;
+  background: #111;
+  color: #fff;
+}
+form button {
+  background: #1F2A3A;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+form button:hover {
+  background: #F3AEBB;
+  color: #1F2A3A;
+}
+
+/* Botón colaboraciones */
+.btn-colaboraciones {
+  display: inline-block;
+  background: #F3AEBB;
+  color: #1F2A3A;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn-colaboraciones:hover {
+  background: #1F2A3A;
+  color: #F3AEBB;
+}
+.titulo-con-imagen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.titulo-con-imagen img {
+  width: auto;
+  max-width: 80px;
+  max-height: 80px;
+  height: auto;
+  border-radius: 50%;
+  border: 2px solid #F3AEBB;
+  box-shadow: 0 0 10px #1F2A3A;
+  object-fit: cover;
+}
+
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #111;
+  color: #F3AEBB;
+  font-size: 0.9rem;
+}
+
+/* Responsive ya incluido en grid */
