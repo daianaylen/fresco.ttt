@@ -1,23 +1,4 @@
 // scripts.js
-// DARK MODE TOGGLE
-const toggle = document.getElementById('dark-mode-toggle');
-const body = document.body;
-
-// Aplicar el tema guardado en localStorage (si existe)
-if (localStorage.getItem('theme') === 'dark') {
-  body.classList.add('dark-mode');
-  toggle.setAttribute('aria-pressed', 'true');
-} else {
-  toggle.setAttribute('aria-pressed', 'false');
-}
-
-toggle.addEventListener('click', () => {
-  body.classList.toggle('dark-mode');
-  const isDark = body.classList.contains('dark-mode');
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  toggle.setAttribute('aria-pressed', isDark);
-});
-
 
 // CARRUSEL para todas las galerías
 document.querySelectorAll('.carrusel').forEach(carrusel => {
@@ -62,10 +43,43 @@ form.addEventListener('submit', (e) => {
     form.reset();
   }, 1500);
 });
+
 // MENÚ HAMBURGUESA
 const menuToggle = document.getElementById('menu-toggle');
 const navLinks = document.getElementById('nav-links');
 
 menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('show');
+});
+
+// Cerrar el menú hamburguesa al hacer clic en un enlace
+document.querySelectorAll('#nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('show');
+  });
+});
+
+// DARK MODE TOGGLE (versión final con ícono y tema guardado)
+const toggleBtn = document.getElementById('dark-mode-toggle');
+const icon = document.getElementById('theme-icon');
+const htmlBody = document.body;
+
+// Inicializar según localStorage
+const isDark = localStorage.getItem('theme') === 'dark';
+if (isDark) {
+  htmlBody.classList.add('dark-mode');
+  icon.textContent = '☀️';
+  toggleBtn.setAttribute('aria-pressed', 'true');
+} else {
+  icon.textContent = '🌙';
+  toggleBtn.setAttribute('aria-pressed', 'false');
+}
+
+// Al hacer click, cambiar tema e ícono
+toggleBtn.addEventListener('click', () => {
+  htmlBody.classList.toggle('dark-mode');
+  const isNowDark = htmlBody.classList.contains('dark-mode');
+  icon.textContent = isNowDark ? '☀️' : '🌙';
+  localStorage.setItem('theme', isNowDark ? 'dark' : 'light');
+  toggleBtn.setAttribute('aria-pressed', isNowDark);
 });
