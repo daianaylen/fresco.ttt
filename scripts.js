@@ -50,7 +50,8 @@ const navLinks = document.getElementById('nav-links');
 
 menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('show');
-});
+  document.body.style.overflow = navLinks.classList.contains('show') ? 'hidden' : '';
+}); 
 
 // Cerrar el menú hamburguesa al hacer clic en un enlace
 document.querySelectorAll('#nav-links a').forEach(link => {
@@ -83,3 +84,5 @@ toggleBtn.addEventListener('click', () => {
   localStorage.setItem('theme', isNowDark ? 'dark' : 'light');
   toggleBtn.setAttribute('aria-pressed', isNowDark);
 });
+  
+

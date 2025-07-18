@@ -17,7 +17,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: var(--fondo);
   color: var(--negro-suave);
   margin: 0;
@@ -27,12 +27,13 @@ body {
   padding-top: 60px;
 }
 
-h2, h3 {
-  font-family: 'Bebas Neue', cursive;
-  text-transform: uppercase;
+h1, h2, h3, .titulo-seccion {
+  font-family: 'Creepster', cursive;
   letter-spacing: 1px;
+  text-transform: uppercase;
   color: var(--rosa);
   text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 header {
@@ -112,7 +113,7 @@ li {
   height: auto;
   border-radius: 12px;
   border: 3px solid var(--celeste);
-  box-shadow: 0 0 10px var(--marron);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* === Carrusel === */
@@ -141,7 +142,7 @@ li {
   height: auto;
   border-radius: 12px;
   border: 3px solid var(--celeste);
-  box-shadow: 0 0 10px var(--marron);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
   background: white;
   transition: transform 0.3s;
 }
@@ -227,7 +228,7 @@ form textarea {
   border: 1px solid var(--marron);
   display: block;
   font-size: 1rem;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* === Footer === */
@@ -264,32 +265,48 @@ footer {
   list-style: none;
   display: none;
   flex-direction: column;
-  position: absolute;
-  top: 60px;
+  justify-content: center;   /* centra verticalmente */
+  align-items: center;       /* centra horizontalmente */
+  position: fixed;
+  top: 60px;                 /* deja visible el header */
   left: 0;
   width: 100%;
+  height: calc(100vh - 60px); /* ocupa todo menos el header */
   background: var(--negro-suave);
+  z-index: 999;
+  padding: 2rem 1rem;
+  gap: 1rem;
   border-top: 2px solid var(--celeste);
+  animation: fadeMenu 0.4s ease;
 }
 
-.nav-links li {
-  text-align: center;
-  padding: 1rem;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: var(--negro-suave);
-  font-weight: bold;
-  font-size: 1.2rem;
+@keyframes fadeMenu {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .nav-links.show {
   display: flex;
 }
-.nav-links.show li a {
-  color: white;
+
+.nav-links li {
+  margin: 1rem 0;
 }
+
+.nav-links li a {
+  color: var(--negro-suave);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav-links li a:hover {
+  transform: scale(1.05);
+  color: var(--celeste);
+}
+
+
 
 @media (min-width: 768px) {
   .menu-toggle {
@@ -411,31 +428,73 @@ footer {
     max-width: 200px;
   }
 }
-/* === Menú hamburguesa responsive === */
-@media (max-width: 768px) {
-  .nav-links.show {
-    background: var(--negro-suave);
-  }
 
-  .nav-links.show li a {
-    color: white;
-    transition: color 0.3s;
-  }
-
-  .nav-links.show li a:hover {
-    color: var(--celeste);
-  }
-}
-
-/* === Menú hamburguesa en modo oscuro === */
 .dark-mode .nav-links.show {
-  background: #222; /* fondo más claro que negro puro para contraste */
+  background: #222;
 }
-
 .dark-mode .nav-links.show li a {
   color: var(--rosa);
 }
-
 .dark-mode .nav-links.show li a:hover {
   color: var(--celeste);
+}
+
+/* === Cuidados para tus tintas === */
+#cuidados {
+  background: white;
+  color: var(--negro-suave);
+  width: 90%;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  line-height: 1.8;
+  font-size: 1rem;
+  animation: fadeIn 1s ease-in;
+}
+
+#cuidados h2 {
+  color: var(--rosa);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#cuidados ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#cuidados li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 2em;
+}
+
+#cuidados li::before {
+  content: "\f55f";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: #3ea265;
+}
+
+.dark-mode #cuidados {
+  background: linear-gradient(270deg, #1a1a1a, #2a2a2a, #1a1a1a);
+  background-size: 600% 600%;
+  animation: bgShift 20s ease infinite;
+  color: var(--blanco);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.15);
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.dark-mode #cuidados li::before {
+  text-shadow: 0 0 2px #00ff88, 0 0 4px #00ff88;
 }
