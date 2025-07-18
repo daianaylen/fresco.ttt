@@ -17,23 +17,25 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: Candara;
+  font-size: 1rem;
+  line-height: 1.6;
   background: var(--fondo);
   color: var(--negro-suave);
   margin: 0;
   overflow-x: hidden;
-  line-height: 1.6;
   transition: background 0.3s, color 0.3s;
   padding-top: 60px;
 }
 
 h1, h2, h3, .titulo-seccion {
-  font-family: 'Creepster', cursive;
-  letter-spacing: 1px;
+  font-family: Candara;
+  font-weight: 600;
   text-transform: uppercase;
   color: var(--rosa);
   text-align: center;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  text-shadow: none;
+
 }
 
 header {
@@ -74,7 +76,7 @@ section {
 
 p {
   margin: 1rem 0;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
 }
 
 ul {
@@ -228,7 +230,8 @@ form textarea {
   border: 1px solid var(--marron);
   display: block;
   font-size: 1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: system-ui, sans-serif;
+
 }
 
 /* === Footer === */
@@ -287,6 +290,12 @@ footer {
 
 .nav-links.show {
   display: flex;
+}
+.nav-links.show a {
+  color: white; /* Texto claro */
+  text-decoration: none;
+  display: block;
+  
 }
 
 .nav-links li {
@@ -497,4 +506,118 @@ footer {
 
 .dark-mode #cuidados li::before {
   text-shadow: 0 0 2px #00ff88, 0 0 4px #00ff88;
+}
+/* === Separador personalizado con imagen y líneas === */
+.separador-personalizado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem auto;
+  width: 100%;
+  height: 40px;
+  position: relative;
+  opacity: 0.6;
+  animation: aparecer 1s ease-in;
+}
+
+.separador-personalizado::before,
+.separador-personalizado::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.separador-personalizado::before {
+  margin-right: 1rem;
+}
+
+.separador-personalizado::after {
+  margin-left: 1rem;
+}
+
+.separador-personalizado::after,
+.separador-personalizado::before {
+  transition: background-color 0.3s ease;
+}
+
+.separador-personalizado::before,
+.separador-personalizado::after {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.separador-personalizado::before.dark-mode,
+.separador-personalizado::after.dark-mode {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Imagen centrada */
+.separador-personalizado::before,
+.separador-personalizado::after,
+.separador-personalizado img {
+  vertical-align: middle;
+}
+
+.separador-personalizado::after {
+  content: "";
+}
+
+.separador-personalizado::before {
+  content: "";
+}
+
+.separador-personalizado::after,
+.separador-personalizado::before {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Agregá esta imagen al centro como HTML */
+.separador-personalizado::after {
+  background-image: none;
+}
+
+.separador-personalizado::before {
+  background-image: none;
+}
+
+/* Modo oscuro */
+.dark-mode .separador-personalizado::before,
+.dark-mode .separador-personalizado::after {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.separador-personalizado::before,
+.separador-personalizado::after {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Imagen real */
+.separador-personalizado::before,
+.separador-personalizado::after {
+  content: "";
+}
+
+.separador-personalizado::after,
+.separador-personalizado::before {
+  height: 1px;
+}
+
+/* Imagen separada (HTML) */
+.separador-personalizado img {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+}
+
+/* Animación */
+@keyframes aparecer {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 0.6;
+  }
 }
