@@ -287,6 +287,9 @@ footer {
 .nav-links.show {
   display: flex;
 }
+.nav-links.show li a {
+  color: white;
+}
 
 @media (min-width: 768px) {
   .menu-toggle {
@@ -407,4 +410,32 @@ footer {
   .logo {
     max-width: 200px;
   }
+}
+/* === Menú hamburguesa responsive === */
+@media (max-width: 768px) {
+  .nav-links.show {
+    background: var(--negro-suave);
+  }
+
+  .nav-links.show li a {
+    color: white;
+    transition: color 0.3s;
+  }
+
+  .nav-links.show li a:hover {
+    color: var(--celeste);
+  }
+}
+
+/* === Menú hamburguesa en modo oscuro === */
+.dark-mode .nav-links.show {
+  background: #222; /* fondo más claro que negro puro para contraste */
+}
+
+.dark-mode .nav-links.show li a {
+  color: var(--rosa);
+}
+
+.dark-mode .nav-links.show li a:hover {
+  color: var(--celeste);
 }
