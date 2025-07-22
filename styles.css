@@ -277,6 +277,7 @@ footer {
   flex-direction: column;
   justify-content: center;   /* centra verticalmente */
   align-items: center;       /* centra horizontalmente */
+  text-align: center;      /* 👈 Centra el texto */
   position: fixed;
   top: 60px;                 /* deja visible el header */
   left: 0;
@@ -284,7 +285,7 @@ footer {
   height: calc(100vh - 60px); /* ocupa todo menos el header */
   background: var(--negro-suave);
   z-index: 999;
-  padding: 2rem 1rem;
+  padding: 2rem 0;
   gap: 1rem;
   border-top: 2px solid var(--celeste);
   animation: fadeMenu 0.4s ease;
@@ -318,6 +319,7 @@ footer {
 
 .nav-links li {
   margin: 1rem 0;
+  width: 100%;
 }
 
 .nav-links li a {
@@ -326,6 +328,9 @@ footer {
   font-weight: bold;
   text-decoration: none;
   transition: color 0.3s, transform 0.3s;
+  display: block;
+  width: 100%;
+  text-align: center; /* 👈 Asegura que el texto esté centrado */
 }
 
 .nav-links li a:hover {
