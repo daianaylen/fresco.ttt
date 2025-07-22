@@ -1,163 +1,168 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fresco ttt</title>
-  <meta name="description" content="Fresco – Tatuajes con alma, diseños originales y buena vibra. Agendá tu turno o coordiná un canje artístico.">
-  <meta name="author" content="Fresco ttt">
-  <link rel="icon" href="multimedia/fresco logo.png" type="image/png">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  
-
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fresco ttt</title>
+<meta name="description" content="Fresco – Tatuajes con alma, diseños originales y buena vibra. Agendá tu turno o coordiná un canje artístico.">
+<meta name="author" content="Fresco ttt">
+<link rel="icon" href="multimedia/fresco logo.png" type="image/png">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Barra de navegación fija -->
-  <nav class="navbar">
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#quien-soy">¿Quién soy?</a></li>
-      <li><a href="#disenos">Diseños</a></li>
-      <li><a href="#trabajos">Trabajos</a></li>
-      <li><a href="#cuidados">Cuidados</a></li>
-      <li><a href="#turno">Turno</a></li>
-    </ul>
-  </nav>
+<!-- Barra de navegación fija -->
+<nav class="navbar">
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#quien-soy">¿Quién soy?</a></li>
+    <li><a href="#disenos">Diseños</a></li>
+    <li><a href="#trabajos">Trabajos</a></li>
+    <li><a href="#cuidados">Cuidados</a></li>
+    <li><a href="#turno">Turno</a></li>
+  </ul>
+</nav>
 
- <button id="dark-mode-toggle" class="toggle-btn" aria-pressed="false">
+<button id="dark-mode-toggle" class="toggle-btn" aria-pressed="false">
   <span id="theme-icon">🌙</span>
 </button>
 
+<!-- Logo -->
+<header>
+  <div class="logo-container">
+    <img src="multimedia/fresco logo.png" alt="Logo de Fresco Tatuador" class="logo">
+  </div>
+</header>
 
-
-  <!-- Logo con espacio arriba corregido -->
-  <header>
-    <div class="logo-container">
-      <img src="multimedia/fresco logo.png" alt="Logo de Fresco Tatuador" class="logo">
+<!-- Secciones -->
+<section id="quien-soy" class="intro">
+  <h2>¿Quién soy?</h2>
+  <div class="seccion-flex">
+    <div class="foto">
+      <img src="multimedia/efe de fresco.jpg" alt="Foto del tatuador en acción">
     </div>
-  </header>
-
-  <!-- Secciones de contenido -->
-  <section id="quien-soy" class="intro">
-    <h2>¿Quién soy?</h2>
-    <div class="seccion-flex">
-      <div class="foto">
-        <img src="multimedia/efe de fresco.jpg" alt="Foto del tatuador en acción">
-      </div>
-      <div class="texto">
-        <p>
-          Soy Tatuador, cocinero de gula y con buenos humos.
-          Hago tatuajes con alma y recetas con estilo. <br>
-          Si querés tatuarte, colaboración o canje: hablame.
-        </p>
-      </div>
+    <div class="texto">
+      <p>
+        Soy Tatuador, cocinero de gula y con buenos humos.
+        Hago tatuajes con alma y recetas con estilo. <br>
+        Si querés tatuarte, colaboración o canje: hablame.
+      </p>
     </div>
-  </section>
+  </div>
+</section>
+
 <div class="separador-personalizado">
   <img src="multimedia/maquina-png.webp" alt="Separador icono" />
 </div>
 
-
-  <section id="disenos">
-    <h2>Diseños disponibles</h2>
-    <div class="carrusel">
-      <button class="prev">&#10094;</button>
-      <div class="galeria">
-        <img src="multimedia/amelia.png" alt="Diseño amelia">
-        <img src="multimedia/art payaso.png" alt="Diseño payaso artístico">
-        <img src="multimedia/calavera corazon.png" alt="Diseño calavera corazón">
-        <img src="multimedia/osita polo.png" alt="Diseño osita polo">
-        <img src="multimedia/hombre jaula.png" alt="Diseño hombre jaula">
-        <img src="multimedia/ojos cuchillo.png" alt="Diseño ojos cuchillo">
-      </div>
-      <button class="next">&#10095;</button>
+<section id="disenos">
+  <h2>Diseños disponibles</h2>
+  <div class="carrusel">
+    <button class="prev"><i class="fas fa-chevron-left"></i></button>
+    <div class="galeria">
+      <img src="multimedia/amelia.png" alt="Diseño amelia">
+      <img src="multimedia/art payaso.png" alt="Diseño payaso artístico">
+      <img src="multimedia/calavera corazon.png" alt="Diseño calavera corazón">
+      <img src="multimedia/osita polo.png" alt="Diseño osita polo">
+      <img src="multimedia/hombre jaula.png" alt="Diseño hombre jaula">
+      <img src="multimedia/ojos cuchillo.png" alt="Diseño ojos cuchillo">
     </div>
-    <a href="https://www.instagram.com/stories/highlights/18022855144472012/" target="_blank" class="btn-instagram">Ver más diseños disponibles</a>
-  </section>
+    <button class="next"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <a href="https://www.instagram.com/stories/highlights/18022855144472012/" target="_blank" class="btn-instagram">Ver más diseños disponibles</a>
+</section>
+
 <div class="separador-personalizado">
   <img src="multimedia/maquina-png.webp" alt="Separador icono" />
 </div>
 
-
-  <section id="trabajos">
-    <h2>Trabajos hechos</h2>
-    <div class="carrusel">
-      <button class="prev">&#10094;</button>
-      <div class="galeria">
-        <img src="multimedia/circulo negro.png" alt="Trabajo círculo negro">
-        <img src="multimedia/escorpion.png" alt="Trabajo escorpión">
-        <img src="multimedia/hombre jaula.png" alt="Trabajo hombre jaula">
-        <img src="multimedia/la creacion.png" alt="Trabajo La Creación">
-        <img src="multimedia/mariposa.png" alt="Trabajo mariposa">
-        <img src="multimedia/ojos cuchillo.png" alt="Trabajo ojos cuchillo">
-      </div>
-      <button class="next">&#10095;</button>
+<section id="trabajos">
+  <h2>Trabajos hechos</h2>
+  <div class="carrusel">
+    <button class="prev"><i class="fas fa-chevron-left"></i></button>
+    <div class="galeria">
+      <img src="multimedia/circulo negro.png" alt="Trabajo círculo negro">
+      <img src="multimedia/escorpion.png" alt="Trabajo escorpión">
+      <img src="multimedia/hombre jaula.png" alt="Trabajo hombre jaula">
+      <img src="multimedia/la creacion.png" alt="Trabajo La Creación">
+      <img src="multimedia/mariposa.png" alt="Trabajo mariposa">
+      <img src="multimedia/ojos cuchillo.png" alt="Trabajo ojos cuchillo">
     </div>
-    <a href="https://www.instagram.com/stories/highlights/17856097882640950/" target="_blank" class="btn-instagram">Ver más en Instagram 📷 </a>
-  </section>
+    <button class="next"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <a href="https://www.instagram.com/stories/highlights/17856097882640950/" target="_blank" class="btn-instagram">Ver más en Instagram 📷</a>
+</section>
+
 <div class="separador-personalizado">
   <img src="multimedia/maquina-png.webp" alt="Separador icono" />
 </div>
 
+<section id="cuidados">
+  <video class="video-fondo" autoplay muted loop playsinline>
+    <source src="multimedia/humo.mp4" type="video/mp4">
+    Tu navegador no soporta videos HTML5.
+  </video>
 
-  <section id="cuidados">
+  <div class="contenido-cuidados">
     <h2>Cuidados para tus tintas</h2>
+
     <div class="seccion-flex reverse">
       <div class="texto">
         <h3>Antes de tatuarte</h3>
         <ul>
-          <li> Descansá bien la noche anterior y vení bien desayunadx.</li>
-          <li> Evitá alcohol o pastillas 24 hs antes.</li>
-          <li> Hidratá la piel días antes (no el mismo día).</li>
-          <li> Usá ropa cómoda según la zona a tatuar.</li>
+          <li>Descansá bien la noche anterior y vení bien desayunadx.</li>
+          <li>Evitá alcohol o pastillas 24 hs antes.</li>
+          <li>Hidratá la piel días antes (no el mismo día).</li>
+          <li>Usá ropa cómoda según la zona a tatuar.</li>
         </ul>
+
         <h3>Durante la sesión</h3>
         <ul>
-          <li> Relajate, es normal sentir algo de "cosita".</li>
-          <li> No muevas la zona mientras se tatúa.</li>
-          <li> Podés traer un caramelo, chicle, etc por si te baja el azúcar.</li>
-          <li> Si te molesta, duele o te pasa algo, avisá al toque.</li>
+          <li>Relajate, es normal sentir algo de "cosita".</li>
+          <li>No muevas la zona mientras se tatúa.</li>
+          <li>Podés traer un caramelo, chicle, etc por si te baja el azúcar.</li>
+          <li>Si te molesta, duele o te pasa algo, avisá al toque.</li>
         </ul>
+
         <h3>Después de la tin</h3>
         <ul>
-          <li> Lavá con agua fría y jabón neutro.</li>
-          <li> Aplicá crema 2–3 veces al día.</li>
-          <li> Evitá pileta, sauna, sol y gym por 10–15 días.</li>
-          <li> No arranques costras. Amor y paciencia ❤️</li>
+          <li>Lavá con agua fría y jabón neutro.</li>
+          <li>Aplicá crema 2–3 veces al día.</li>
+          <li>Evitá pileta, sauna, sol y gym por 10–15 días.</li>
+          <li>No arranques costras. Amor y paciencia ❤️</li>
         </ul>
       </div>
+
       <div class="foto">
-        <img src="multimedia/fresco porro.png" alt="Imagen divertida sobre cuidados del tattoo">
+        <img src="multimedia/fresco porro.png" alt="Imagen divertida sobre cuidados del tattoo" class="imagen-cuidados">
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+
 <div class="separador-personalizado">
   <img src="multimedia/maquina-png.webp" alt="Separador icono" />
 </div>
 
+<section id="turno">
+  <h2>Sacá tu turno</h2>
+  <form action="https://formsubmit.co/tatuador@email.com" method="POST">
+    <input type="text" name="nombre" placeholder="Tu nombre" required>
+    <input type="email" name="email" placeholder="Tu email" required>
+    <textarea name="mensaje" rows="5" placeholder="¿Qué te gustaría hacerte? ¿Dónde y de qué tamaño?" required></textarea>
+    <input type="hidden" name="_next" value="https://tusitioweb.com/gracias.html">
+    <button type="submit" class="btn-turno">Enviar</button>
+  </form>
+</section>
 
-  <section id="turno">
-    <h2>Sacá tu turno</h2>
-    <form action="https://formsubmit.co/tatuador@email.com" method="POST">
-      <input type="text" name="nombre" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu email" required>
-      <textarea name="mensaje" rows="5" placeholder="¿Qué te gustaría hacerte? ¿Dónde y de qué tamaño?" required></textarea>
-      <input type="hidden" name="_next" value="https://tusitioweb.com/gracias.html">
-      <button type="submit" class="btn-turno">Enviar</button>
-    </form>
+<footer>
+  © 2025 Tatuador • Fresco ttt 2025.
+</footer>
 
-  </section>
+<a href="https://www.instagram.com/rip.fresco" target="_blank" class="btn-canjes-flotante">Para canje o colaboración piola 🤝</a>
 
-  <footer>
-    © 2025 Tatuador • Fresco ttt 2025.
-  </footer>
-
-  <a href="https://www.instagram.com/rip.fresco" target="_blank" class="btn-canjes-flotante">Para canje o colaboración piola 🤝</a>
-
-  <script src="scripts.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>
-

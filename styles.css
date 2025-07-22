@@ -158,20 +158,27 @@ li {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  background: var(--rosa);
+  background: var(--negro-suave); /* negro suave */
   border: none;
-  font-size: 2rem;
-  padding: 0.5rem 1rem;
+  font-size: 1.8rem;
+  padding: 0.6rem;
   cursor: pointer;
-  color: white;
+  color: var(--rosa);
   border-radius: 50%;
-  box-shadow: 0 0 10px var(--negro-suave);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.2s;
+  width: 45px;
+  height: 45px;
 }
 
 .carrusel button:hover {
-  transform: scale(1.1);
+  transform: translateY(-50%) scale(1.1);
+  background: black; /* más negro al pasar el mouse opcional */
 }
+
 
 .carrusel .prev { left: 10px; }
 .carrusel .next { right: 10px; }
@@ -282,6 +289,17 @@ footer {
   border-top: 2px solid var(--celeste);
   animation: fadeMenu 0.4s ease;
 }
+
+@media (min-width: 768px) {
+  .dark-mode .nav-links li a {
+    color: #222;
+  }
+
+  .dark-mode .nav-links li a:hover {
+    color: var(--celeste);
+  }
+}
+
 
 @keyframes fadeMenu {
   from { opacity: 0; transform: translateY(-10px); }
@@ -450,18 +468,38 @@ footer {
 
 /* === Cuidados para tus tintas === */
 #cuidados {
-  background: white;
-  color: var(--negro-suave);
-  width: 90%;
+  position: relative;
+  width: 75%;
+  margin: 2rem auto; /* 👈 margen arriba y abajo */
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 20px; /* 👈 bordes redondeados */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* 👈 sombra suave */
+}
+
+#cuidados .video-fondo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.8;
+  pointer-events: none;
+  border-radius: 20px; /* 👈 que el video también siga el borde redondeado */
+}
+
+#cuidados .contenido-cuidados {
+  position: relative;
+  z-index: 1;
+  width: 100%;
   max-width: 900px;
-  margin: 2rem auto;
+  margin: 0 auto;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  line-height: 1.8;
-  font-size: 1rem;
-  animation: fadeIn 1s ease-in;
 }
 
 #cuidados h2 {
@@ -479,6 +517,9 @@ footer {
   margin-bottom: 0.5rem;
   position: relative;
   padding-left: 2em;
+  color: var(--blanco);
+  overflow-wrap: break-word; /* 👈 evita corte feo de palabras */
+  word-break: break-word;    /* 👈 extra seguridad */
 }
 
 #cuidados li::before {
@@ -495,7 +536,7 @@ footer {
   background-size: 600% 600%;
   animation: bgShift 20s ease infinite;
   color: var(--blanco);
-  box-shadow: 0 0 20px rgba(0, 255, 136, 0.15);
+  box-shadow: 0 0 24px rgba(0, 255, 136, 0.05); /* 👈 sombra con glow sutil */
 }
 
 @keyframes bgShift {
@@ -507,6 +548,51 @@ footer {
 .dark-mode #cuidados li::before {
   text-shadow: 0 0 2px #00ff88, 0 0 4px #00ff88;
 }
+
+@media (max-width: 600px) {
+  #cuidados {
+    width: 90%;
+    border-radius: 16px;
+  }
+
+  #cuidados .contenido-cuidados {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  #cuidados .imagen-cuidados {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+#cuidados .imagen-cuidados {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: none;
+  transition: transform 0.3s ease;
+}
+
+#cuidados .imagen-cuidados:hover {
+  transform: scale(1.05);
+}
+
+.dark-mode #cuidados .imagen-cuidados {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 0 4px rgba(255, 255, 255, 0.05),
+    0 0 8px rgba(255, 255, 255, 0.08),
+    0 0 12px rgba(255, 255, 255, 0.1);
+}
+
+
+
+
 /* === Separador personalizado con imagen y líneas === */
 .separador-personalizado {
   display: flex;
