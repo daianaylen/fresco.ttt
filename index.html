@@ -8,7 +8,8 @@
 <meta name="author" content="Fresco ttt">
 <link rel="icon" href="multimedia/fresco logo.png" type="image/png">
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
 
@@ -29,7 +30,7 @@
 </button>
 
 <!-- Logo -->
-<header>
+<header> 
   <div class="logo-container">
     <img src="multimedia/fresco logo.png" alt="Logo de Fresco Tatuador" class="logo">
   </div>
@@ -40,7 +41,7 @@
   <h2>¿Quién soy?</h2>
   <div class="seccion-flex">
     <div class="foto">
-      <img src="multimedia/efe de fresco.jpg" alt="Foto del tatuador en acción">
+      <img src="multimedia/efe de fresco.jpg" alt="Foto del tatuador en acción" class="imagen-cuidados">
     </div>
     <div class="texto">
       <p>
@@ -51,11 +52,9 @@
     </div>
   </div>
 </section>
-
 <div class="separador-personalizado">
   <img src="multimedia/maquina-png.webp" alt="Separador icono" />
 </div>
-
 <section id="disenos">
   <h2>Diseños disponibles</h2>
   <div class="carrusel">
@@ -147,15 +146,30 @@
 </div>
 
 <section id="turno">
-  <h2>Sacá tu turno</h2>
-  <form action="https://formsubmit.co/tatuador@email.com" method="POST">
-    <input type="text" name="nombre" placeholder="Tu nombre" required>
-    <input type="email" name="email" placeholder="Tu email" required>
-    <textarea name="mensaje" rows="5" placeholder="¿Qué te gustaría hacerte? ¿Dónde y de qué tamaño?" required></textarea>
-    <input type="hidden" name="_next" value="https://tusitioweb.com/gracias.html">
-    <button type="submit" class="btn-turno">Enviar</button>
-  </form>
+  <video class="video-fondo" autoplay muted loop playsinline>
+    <source src="multimedia/humo.mp4" type="video/mp4">
+    Tu navegador no soporta el video.
+  </video>
+  <div class="contenido-turno">
+    <h2>Sacá tu turno</h2>
+    <p class="turno-texto">
+      Para consultar precios o pedir turno, escribinos por Instagram y no olvides incluir:
+    </p>
+    <ul class="turno-lista tips-con-hoja">
+  <li>De qué tamaño te gustaría el tattoo</li>
+  <li>Diseño (foto o dibujo) o descripción del mismo.</li>
+  <li>Lugar del cuerpo donde lo querés</li>
+</ul>
+
+
+
+    <a href="https://instagram.com/tu_usuario" target="_blank" class="btn-instagram">
+      Enviar mensaje en Instagram
+    </a>
+  </div>
 </section>
+
+
 
 <footer>
   © 2025 Original • Fresco ttt 2025.

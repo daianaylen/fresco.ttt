@@ -35,7 +35,8 @@ h1, h2, h3, .titulo-seccion {
   color: var(--rosa);
   text-align: center;
   text-shadow: none;
-
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
 }
 
 header {
@@ -65,8 +66,8 @@ header {
 }
 
 section {
-  padding: 3rem 1rem;
-  animation: fadeIn 1s ease-in;
+  padding: 1rem 0.5rem;
+  margin-bottom: 0.8rem;
 }
 
 @keyframes fadeIn {
@@ -75,7 +76,7 @@ section {
 }
 
 p {
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   font-size: 1.1rem;
 }
 
@@ -117,6 +118,7 @@ li {
   border: 3px solid var(--celeste);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
+
 
 /* === Carrusel === */
 .carrusel {
@@ -226,20 +228,158 @@ li {
   transform: scale(1.05);
 }
 
-/* === Formulario === */
-form input,
-form textarea {
-  width: 100%;
-  max-width: 500px;
-  margin: 0.5rem auto;
-  padding: 0.8rem;
-  border-radius: 8px;
-  border: 1px solid var(--marron);
-  display: block;
-  font-size: 1rem;
-  font-family: system-ui, sans-serif;
-
+/* === Sección Turno con instrucciones === */
+#turno .turno-texto {
+  max-width: 600px;
+  margin: 1rem auto;
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--negro-suave);
+  line-height: 1.5;
 }
+
+#turno .turno-lista {
+  max-width: 500px;
+  margin: 1rem auto 2rem;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--negro-suave);
+  list-style: none;
+  line-height: 1.4;
+  padding: 0;
+}
+
+#turno .turno-lista li {
+  position: relative;
+  padding-left: 2em;
+  color: var(--blanco);
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+#turno .turno-lista li::before {
+  content: "\f55f";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: #3ea265;
+}
+
+/* === Turno para tus tintas (similar a Cuidados) === */
+#turno {
+  position: relative;
+  width: 75%;
+  margin: 2rem auto;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  background: var(--fondo);
+}
+
+#turno .contenido-turno {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+#turno .turno-texto {
+  max-width: 600px;
+  margin: 1rem auto;
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--blanco);
+  line-height: 1.5;
+}
+
+#turno .turno-lista {
+  max-width: 500px;
+  margin: 1rem auto 2rem;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--negro-suave);
+  list-style: none;
+  line-height: 1.4;
+  padding: 0;
+}
+
+#turno .turno-lista li::before {
+  content: "\f55f";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: #3ea265;
+}
+
+#turno .btn-instagram {
+  display: block;
+  width: fit-content;
+  margin: 2rem auto;
+}
+
+.dark-mode #turno {
+  background: linear-gradient(270deg, #1a1a1a, #2a2a2a, #1a1a1a);
+  background-size: 600% 600%;
+  animation: bgShift 20s ease infinite;
+  color: var(--blanco);
+  box-shadow: 0 0 24px rgba(0, 255, 136, 0.05);
+}
+
+.dark-mode #turno .turno-lista li::before {
+  text-shadow: 0 0 2px #00ff88, 0 0 4px #00ff88;
+}
+
+@media (max-width: 600px) {
+  #turno {
+    width: 90%;
+    border-radius: 16px;
+  }
+
+  #turno .contenido-turno {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+#turno .video-fondo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.8;
+  pointer-events: none;
+  border-radius: 20px;
+}
+.tips-con-hoja {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tips-con-hoja li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.tips-con-hoja img {
+  width: 24px;
+  height: auto;
+}
+
 
 /* === Footer === */
 footer {
@@ -345,6 +485,7 @@ footer {
     display: none;
   }
 
+ @media (min-width: 768px) {
   .nav-links {
     display: flex !important;
     flex-direction: row;
@@ -352,11 +493,24 @@ footer {
     justify-content: center;
     background: none;
     border: none;
+    gap: 0.4rem; /* 👈 esto define espacio entre enlaces */
   }
 
   .nav-links li {
-    padding: 0 1rem;
+    padding: 0;
+    margin: 0; /* quitar márgenes innecesarios */
+    width: auto;
   }
+
+  .nav-links li a {
+    font-size: 1.4rem; /* opcional: más pequeño */
+    padding: 0.4rem 0.8rem; /* más compacto */
+    width: auto;
+    display: inline-block;
+  }
+}
+
+
 }
 
 /* === Botón Modo Oscuro === */
@@ -459,7 +613,30 @@ footer {
   .logo {
     max-width: 200px;
   }
+  section {
+    padding: 0.5rem 0.5rem;
+    margin-bottom: 0.3rem !important; /* antes estaba en 0.8rem */
+  }
+  .separador-personalizado {
+    height: 20px;
+    margin: 0.2rem auto 0.1rem;
+  }
+
+  .separador-personalizado img {
+    height: 20px;
+    width: 20px;
+  }
+  .seccion-flex {
+    margin-bottom: 0.3rem !important; /* más compacto */
+    gap: 0.6rem;
+  }
+
+    h1, h2, h3 {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
 }
+
 
 .dark-mode .nav-links.show {
   background: #222;
@@ -595,28 +772,33 @@ footer {
     0 0 12px rgba(255, 255, 255, 0.1);
 }
 
-
-
-
 /* === Separador personalizado con imagen y líneas === */
 .separador-personalizado {
-  display: flex;
   align-items: center;
+  display: flex;
+  height: 20px;
   justify-content: center;
-  margin: 3rem auto;
-  width: 100%;
-  height: 40px;
-  position: relative;
-  opacity: 0.6;
-  animation: aparecer 1s ease-in;
+  margin: 0.2rem auto 0.1rem;
 }
 
+.separador-personalizado img {
+  height: 20px;
+  width: 20px;
+  object-fit: contain;
+}
+
+
+/* Líneas a los lados */
 .separador-personalizado::before,
 .separador-personalizado::after {
   content: "";
   flex: 1;
   height: 1px;
   background-color: rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
 }
 
 .separador-personalizado::before {
@@ -627,78 +809,18 @@ footer {
   margin-left: 1rem;
 }
 
-.separador-personalizado::after,
-.separador-personalizado::before {
-  transition: background-color 0.3s ease;
-}
-
-.separador-personalizado::before,
-.separador-personalizado::after {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.separador-personalizado::before.dark-mode,
-.separador-personalizado::after.dark-mode {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Imagen centrada */
-.separador-personalizado::before,
-.separador-personalizado::after,
-.separador-personalizado img {
-  vertical-align: middle;
-}
-
-.separador-personalizado::after {
-  content: "";
-}
-
-.separador-personalizado::before {
-  content: "";
-}
-
-.separador-personalizado::after,
-.separador-personalizado::before {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-/* Agregá esta imagen al centro como HTML */
-.separador-personalizado::after {
-  background-image: none;
-}
-
-.separador-personalizado::before {
-  background-image: none;
-}
-
 /* Modo oscuro */
 .dark-mode .separador-personalizado::before,
 .dark-mode .separador-personalizado::after {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.separador-personalizado::before,
-.separador-personalizado::after {
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-/* Imagen real */
-.separador-personalizado::before,
-.separador-personalizado::after {
-  content: "";
-}
-
-.separador-personalizado::after,
-.separador-personalizado::before {
-  height: 1px;
-}
-
-/* Imagen separada (HTML) */
+/* Imagen centrada (HTML) */
 .separador-personalizado img {
   height: 40px;
   width: 40px;
   object-fit: contain;
+  vertical-align: middle;
 }
 
 /* Animación */
@@ -711,4 +833,22 @@ footer {
     transform: scale(1);
     opacity: 0.6;
   }
+}
+
+
+
+#quien-soy .foto img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: none;
+  transition: transform 0.3s ease;
+}
+
+#quien-soy .foto img:hover {
+  transform: scale(1.05);
 }

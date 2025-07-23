@@ -5,22 +5,24 @@ document.querySelectorAll('.carrusel').forEach(carrusel => {
   const nextBtn = carrusel.querySelector('.next');
   let autoSlide;
 
+  function startAutoSlide() {
+    autoSlide = setInterval(() => {
+      galeria.scrollBy({ left: galeria.clientWidth * 0.8, behavior: 'smooth' });
+    }, 4000);
+  }
+
   if (prevBtn && galeria) {
     prevBtn.addEventListener('click', () => {
       galeria.scrollBy({ left: -galeria.clientWidth * 0.8, behavior: 'smooth' });
+      clearInterval(autoSlide); // detiene el autoslide
     });
   }
 
   if (nextBtn && galeria) {
     nextBtn.addEventListener('click', () => {
       galeria.scrollBy({ left: galeria.clientWidth * 0.8, behavior: 'smooth' });
+      clearInterval(autoSlide); // detiene el autoslide
     });
-  }
-
-  function startAutoSlide() {
-    autoSlide = setInterval(() => {
-      galeria.scrollBy({ left: galeria.clientWidth * 0.8, behavior: 'smooth' });
-    }, 4000);
   }
 
   if (galeria) {
@@ -28,27 +30,17 @@ document.querySelectorAll('.carrusel').forEach(carrusel => {
     galeria.addEventListener('mouseleave', startAutoSlide);
     startAutoSlide();
   }
+
+  // Asegurar clickeabilidad de botones
+  if (prevBtn) {
+    prevBtn.style.pointerEvents = 'auto';
+    prevBtn.style.zIndex = '9999';
+  }
+  if (nextBtn) {
+    nextBtn.style.pointerEvents = 'auto';
+    nextBtn.style.zIndex = '9999';
+  }
 });
-
-
-// === FORMULARIO - Mensaje ficticio de envío para UX ===
-const form = document.querySelector('form');
-const msg = document.createElement('p');
-msg.className = 'form-message';
-form.appendChild(msg);
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  msg.textContent = 'Enviando...';
-  msg.style.color = 'var(--celeste)';
-
-  setTimeout(() => {
-    msg.textContent = 'Mensaje enviado con éxito. ¡Gracias por escribirle a Fresco!';
-    msg.style.color = 'green';
-    form.reset();
-  }, 1500);
-});
-
 
 // === MENÚ HAMBURGUESA ===
 const menuToggle = document.getElementById('menu-toggle');
@@ -66,7 +58,6 @@ document.querySelectorAll('#nav-links a').forEach(link => {
     document.body.style.overflow = '';
   });
 });
-
 
 // === DARK MODE TOGGLE (con ícono y guardado) ===
 const toggleBtn = document.getElementById('dark-mode-toggle');
