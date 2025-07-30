@@ -6,6 +6,12 @@
   --fondo: #85a8d8;
   --blanco: #fff;
 }
+/* === RESET GENERAL === */
+* {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
 
 /* === Modo oscuro === */
 .dark-mode {
@@ -94,7 +100,8 @@ li {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
+  flex-direction: column;
 }
 
 .seccion-flex.reverse {
@@ -150,7 +157,6 @@ li {
   background: white;
   transition: transform 0.3s;
 }
-
 .carrusel .galeria img:hover {
   transform: rotate(-1deg) scale(1.03);
 }
@@ -160,7 +166,7 @@ li {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  background: var(--negro-suave); /* negro suave */
+  background: var(--negro-suave);
   border: none;
   font-size: 1.8rem;
   padding: 0.6rem;
@@ -175,12 +181,10 @@ li {
   width: 45px;
   height: 45px;
 }
-
 .carrusel button:hover {
   transform: translateY(-50%) scale(1.1);
-  background: black; /* más negro al pasar el mouse opcional */
+  background: black;
 }
-
 
 .carrusel .prev { left: 10px; }
 .carrusel .next { right: 10px; }
@@ -484,8 +488,6 @@ footer {
   .menu-toggle {
     display: none;
   }
-
- @media (min-width: 768px) {
   .nav-links {
     display: flex !important;
     flex-direction: row;
@@ -508,9 +510,6 @@ footer {
     width: auto;
     display: inline-block;
   }
-}
-
-
 }
 
 /* === Botón Modo Oscuro === */
@@ -540,63 +539,12 @@ footer {
   color: var(--negro-suave);
 }
 
-/* === Botón flotante de canjes === */
-.btn-canjes-flotante {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--rosa);
-  color: var(--negro-suave);
-  font-weight: bold;
-  padding: 1rem 1.5rem;
-  border-radius: 50px;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-  animation: flotar 3s ease-in-out infinite;
-  z-index: 999;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.btn-canjes-flotante:hover {
-  background: var(--celeste);
-  transform: scale(1.05);
-}
-
-@keyframes flotar {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-@media (max-width: 768px) {
-  .btn-canjes-flotante {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
-    bottom: 80px;
-    right: 10px;
-    border-radius: 25px;
-    max-width: 110px;
-    color: transparent;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .btn-canjes-flotante::before {
-    content: "Colab🤝canje";
-    color: var(--negro-suave);
-    font-weight: bold;
-  }
-}
-
 /* === Responsive ajustes generales === */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .seccion-flex {
-    flex-direction: column;
-    gap: 1.5rem;
-    text-align: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
@@ -851,4 +799,115 @@ footer {
 
 #quien-soy .foto img:hover {
   transform: scale(1.05);
+}
+
+/* === Media Queries Responsive === */
+@media (max-width: 768px) {
+  .seccion-flex {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .seccion-flex .texto,
+  .seccion-flex .foto {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .seccion-flex .foto img {
+    max-width: 90%;
+    height: auto;
+  }
+
+  p, li, .btn-turno, .btn-instagram {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.4rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .logo {
+    max-width: 180px;
+  }
+
+  section {
+    padding: 0.5rem 0.5rem;
+    margin-bottom: 0.3rem !important;
+  }
+
+  .btn-canjes-flotante {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    bottom: 80px;
+    right: 10px;
+    border-radius: 25px;
+    max-width: 110px;
+    color: transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .btn-canjes-flotante::before {
+    content: "Colab🤝canje";
+    color: var(--negro-suave);
+    font-weight: bold;
+  }
+
+  #turno,
+  #cuidados {
+    width: 90%;
+    border-radius: 16px;
+  }
+
+  #turno .contenido-turno,
+  #cuidados .contenido-cuidados {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  #turno .turno-texto,
+  #cuidados .contenido-cuidados p,
+  #turno .turno-lista,
+  #cuidados ul {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 1rem;
+    line-height: 1.4;
+  }
+
+  .carrusel .galeria img {
+    width: 85vw;
+  }
+
+  .carrusel button {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.7rem;
+  }
+}
+
+.contenido-quien-soy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.botones-instagram {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .botones-instagram {
+    flex-direction: row;
+    gap: 1rem;
+  }
 }
