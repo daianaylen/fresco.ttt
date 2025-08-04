@@ -12,7 +12,6 @@
   word-wrap: break-word;
   overflow-wrap: anywhere;
 }
-
 /* === Modo oscuro === */
 .dark-mode {
   --fondo: #3d5683;
@@ -21,7 +20,6 @@
   --rosa: #FF92AE;
   --celeste: #8ADFE0;
 }
-
 body {
   font-family: Candara;
   font-size: 1rem;
@@ -33,30 +31,25 @@ body {
   transition: background 0.3s, color 0.3s;
   padding-top: 60px;
 }
-
 h1, h2, h3, .titulo-seccion {
   font-family: Candara;
   font-weight: 600;
   text-transform: uppercase;
   color: var(--rosa);
   text-align: center;
-  text-shadow: none;
   margin-top: 0.3rem;
   margin-bottom: 0.3rem;
 }
-
 header {
   background: var(--rosa);
   padding: 1.5rem;
 }
-
 .logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-
 .logo {
   display: block;
   max-width: 300px;
@@ -65,36 +58,29 @@ header {
   object-fit: contain;
   animation: pulse 3s 2;
 }
-
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
 }
-
 section {
   padding: 1rem 0.5rem;
   margin-bottom: 0.8rem;
 }
-
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 p {
   margin: 0.5rem 0;
   font-size: 1.1rem;
 }
-
 ul {
   list-style: none;
   padding-left: 0;
 }
-
 li {
   margin-bottom: 0.6rem;
 }
-
 .seccion-flex {
   display: flex;
   flex-wrap: wrap;
@@ -103,21 +89,17 @@ li {
   gap: 1.5rem;
   flex-direction: column;
 }
-
 .seccion-flex.reverse {
   flex-direction: row-reverse;
 }
-
 .seccion-flex .texto {
   flex: 1 1 300px;
   max-width: 500px;
 }
-
 .seccion-flex .foto {
   flex: 1 1 250px;
   max-width: 300px;
 }
-
 .seccion-flex .foto img {
   width: 100%;
   height: auto;
@@ -125,17 +107,13 @@ li {
   border: 3px solid var(--celeste);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
-
-
 /* === Carrusel === */
 .carrusel {
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-width: 100%;
   margin: 0 auto;
 }
-
 .carrusel .galeria {
   display: flex;
   transition: transform 0.5s ease;
@@ -145,7 +123,6 @@ li {
   gap: 1rem;
   padding: 1rem;
 }
-
 .carrusel .galeria img {
   scroll-snap-align: start;
   flex-shrink: 0;
@@ -160,7 +137,6 @@ li {
 .carrusel .galeria img:hover {
   transform: rotate(-1deg) scale(1.03);
 }
-
 .carrusel button {
   position: absolute;
   top: 50%;
@@ -185,10 +161,8 @@ li {
   transform: translateY(-50%) scale(1.1);
   background: black;
 }
-
 .carrusel .prev { left: 10px; }
 .carrusel .next { right: 10px; }
-
 /* === Botones === */
 .btn-turno {
   background: var(--celeste);
@@ -205,12 +179,10 @@ li {
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   transition: transform 0.2s, background 0.3s;
 }
-
 .btn-turno:hover {
   background: var(--rosa);
   transform: scale(1.05);
 }
-
 .btn-instagram {
   display: block;
   width: fit-content;
@@ -226,22 +198,11 @@ li {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: background 0.3s, transform 0.2s;
 }
-
 .btn-instagram:hover {
   background: var(--celeste);
   transform: scale(1.05);
 }
-
 /* === Sección Turno con instrucciones === */
-#turno .turno-texto {
-  max-width: 600px;
-  margin: 1rem auto;
-  text-align: center;
-  font-size: 1.1rem;
-  color: var(--negro-suave);
-  line-height: 1.5;
-}
-
 #turno .turno-lista {
   max-width: 500px;
   margin: 1rem auto 2rem;
@@ -252,7 +213,6 @@ li {
   line-height: 1.4;
   padding: 0;
 }
-
 #turno .turno-lista li {
   position: relative;
   padding-left: 2em;
@@ -260,16 +220,6 @@ li {
   overflow-wrap: break-word;
   word-break: break-word;
 }
-
-#turno .turno-lista li::before {
-  content: "\f55f";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  position: absolute;
-  left: 0;
-  color: #3ea265;
-}
-
 /* === Turno para tus tintas (similar a Cuidados) === */
 #turno {
   position: relative;
@@ -281,7 +231,6 @@ li {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   background: var(--fondo);
 }
-
 #turno .contenido-turno {
   position: relative;
   z-index: 1;
@@ -299,18 +248,6 @@ li {
   color: var(--blanco);
   line-height: 1.5;
 }
-
-#turno .turno-lista {
-  max-width: 500px;
-  margin: 1rem auto 2rem;
-  text-align: center;
-  font-size: 1rem;
-  color: var(--negro-suave);
-  list-style: none;
-  line-height: 1.4;
-  padding: 0;
-}
-
 #turno .turno-lista li::before {
   content: "\f55f";
   font-family: "Font Awesome 6 Free";
@@ -319,13 +256,11 @@ li {
   left: 0;
   color: #3ea265;
 }
-
 #turno .btn-instagram {
   display: block;
   width: fit-content;
   margin: 2rem auto;
 }
-
 .dark-mode #turno {
   background: linear-gradient(270deg, #1a1a1a, #2a2a2a, #1a1a1a);
   background-size: 600% 600%;
@@ -333,17 +268,14 @@ li {
   color: var(--blanco);
   box-shadow: 0 0 24px rgba(0, 255, 136, 0.05);
 }
-
 .dark-mode #turno .turno-lista li::before {
   text-shadow: 0 0 2px #00ff88, 0 0 4px #00ff88;
 }
-
 @media (max-width: 600px) {
   #turno {
     width: 90%;
     border-radius: 16px;
   }
-
   #turno .contenido-turno {
     width: 100%;
     padding: 1rem;
@@ -369,7 +301,6 @@ li {
   padding: 0;
   margin: 0;
 }
-
 .tips-con-hoja li {
   display: flex;
   align-items: center;
@@ -378,13 +309,10 @@ li {
   font-size: 1.1rem;
   color: #fff;
 }
-
 .tips-con-hoja img {
   width: 24px;
   height: auto;
 }
-
-
 /* === Footer === */
 footer {
   background: var(--marron);
@@ -393,7 +321,6 @@ footer {
   color: var(--negro-suave);
   font-size: 0.9rem;
 }
-
 /* === Navbar === */
 .navbar {
   position: fixed;
@@ -408,13 +335,11 @@ footer {
   padding: 0 1rem;
   z-index: 1000;
 }
-
 .menu-toggle {
   font-size: 2rem;
   cursor: pointer;
   color: var(--negro-suave);
 }
-
 .nav-links {
   list-style: none;
   display: none;
@@ -434,23 +359,18 @@ footer {
   border-top: 2px solid var(--celeste);
   animation: fadeMenu 0.4s ease;
 }
-
 @media (min-width: 768px) {
   .dark-mode .nav-links li a {
     color: #222;
   }
-
   .dark-mode .nav-links li a:hover {
     color: var(--celeste);
   }
 }
-
-
 @keyframes fadeMenu {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 .nav-links.show {
   display: flex;
 }
@@ -460,12 +380,10 @@ footer {
   display: block;
   
 }
-
 .nav-links li {
   margin: 1rem 0;
   width: 100%;
 }
-
 .nav-links li a {
   color: var(--negro-suave);
   font-size: 1.5rem;
@@ -476,14 +394,10 @@ footer {
   width: 100%;
   text-align: center; /* 👈 Asegura que el texto esté centrado */
 }
-
 .nav-links li a:hover {
   transform: scale(1.05);
   color: var(--celeste);
 }
-
-
-
 @media (min-width: 768px) {
   .menu-toggle {
     display: none;
@@ -497,13 +411,11 @@ footer {
     border: none;
     gap: 0.4rem; /* 👈 esto define espacio entre enlaces */
   }
-
   .nav-links li {
     padding: 0;
     margin: 0; /* quitar márgenes innecesarios */
     width: auto;
   }
-
   .nav-links li a {
     font-size: 1.4rem; /* opcional: más pequeño */
     padding: 0.4rem 0.8rem; /* más compacto */
@@ -511,7 +423,6 @@ footer {
     display: inline-block;
   }
 }
-
 /* === Botón Modo Oscuro === */
 .toggle-btn {
   position: fixed;
@@ -533,12 +444,10 @@ footer {
   box-shadow: 0 0 8px rgba(0,0,0,0.3);
   transition: background 0.3s, color 0.3s;
 }
-
 .dark-mode .toggle-btn {
   background: white;
   color: var(--negro-suave);
 }
-
 /* === Responsive ajustes generales === */
 @media (min-width: 768px) {
   .seccion-flex {
@@ -547,17 +456,14 @@ footer {
     justify-content: space-between;
   }
 }
-
 @media (max-width: 600px) {
   .carrusel .galeria img {
     width: 85vw;
   }
-
   .carrusel button {
     font-size: 1.5rem;
     padding: 0.3rem 0.7rem;
   }
-
   .logo {
     max-width: 200px;
   }
@@ -569,7 +475,6 @@ footer {
     height: 20px;
     margin: 0.2rem auto 0.1rem;
   }
-
   .separador-personalizado img {
     height: 20px;
     width: 20px;
@@ -578,14 +483,11 @@ footer {
     margin-bottom: 0.3rem !important; /* más compacto */
     gap: 0.6rem;
   }
-
     h1, h2, h3 {
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
   }
 }
-
-
 .dark-mode .nav-links.show {
   background: #222;
 }
@@ -595,7 +497,6 @@ footer {
 .dark-mode .nav-links.show li a:hover {
   color: var(--celeste);
 }
-
 /* === Cuidados para tus tintas === */
 #cuidados {
   position: relative;
@@ -606,7 +507,6 @@ footer {
   border-radius: 20px; /* 👈 bordes redondeados */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* 👈 sombra suave */
 }
-
 #cuidados .video-fondo {
   position: absolute;
   top: 50%;
@@ -622,7 +522,6 @@ footer {
   pointer-events: none;
   border-radius: 20px; /* 👈 que el video también siga el borde redondeado */
 }
-
 #cuidados .contenido-cuidados {
   position: relative;
   z-index: 1;
@@ -631,18 +530,15 @@ footer {
   margin: 0 auto;
   padding: 2rem;
 }
-
 #cuidados h2 {
   color: var(--rosa);
   text-align: center;
   margin-bottom: 1rem;
 }
-
 #cuidados ul {
   list-style: none;
   padding-left: 0;
 }
-
 #cuidados li {
   margin-bottom: 0.5rem;
   position: relative;
@@ -651,7 +547,6 @@ footer {
   overflow-wrap: break-word; /* 👈 evita corte feo de palabras */
   word-break: break-word;    /* 👈 extra seguridad */
 }
-
 #cuidados li::before {
   content: "\f55f";
   font-family: "Font Awesome 6 Free";
@@ -660,7 +555,6 @@ footer {
   left: 0;
   color: #3ea265;
 }
-
 .dark-mode #cuidados {
   background: linear-gradient(270deg, #1a1a1a, #2a2a2a, #1a1a1a);
   background-size: 600% 600%;
@@ -668,34 +562,28 @@ footer {
   color: var(--blanco);
   box-shadow: 0 0 24px rgba(0, 255, 136, 0.05); /* 👈 sombra con glow sutil */
 }
-
 @keyframes bgShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
 .dark-mode #cuidados li::before {
   text-shadow: 0 0 2px #00ff88, 0 0 4px #00ff88;
 }
-
 @media (max-width: 600px) {
   #cuidados {
     width: 90%;
     border-radius: 16px;
   }
-
   #cuidados .contenido-cuidados {
     width: 100%;
     padding: 1rem;
   }
-
   #cuidados .imagen-cuidados {
     width: 150px;
     height: 150px;
   }
 }
-
 #cuidados .imagen-cuidados {
   width: 220px;
   height: 220px;
@@ -707,11 +595,9 @@ footer {
   box-shadow: none;
   transition: transform 0.3s ease;
 }
-
 #cuidados .imagen-cuidados:hover {
   transform: scale(1.05);
 }
-
 .dark-mode #cuidados .imagen-cuidados {
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow:
@@ -719,7 +605,6 @@ footer {
     0 0 8px rgba(255, 255, 255, 0.08),
     0 0 12px rgba(255, 255, 255, 0.1);
 }
-
 /* === Separador personalizado con imagen y líneas === */
 .separador-personalizado {
   align-items: center;
@@ -728,14 +613,6 @@ footer {
   justify-content: center;
   margin: 0.2rem auto 0.1rem;
 }
-
-.separador-personalizado img {
-  height: 20px;
-  width: 20px;
-  object-fit: contain;
-}
-
-
 /* Líneas a los lados */
 .separador-personalizado::before,
 .separador-personalizado::after {
@@ -748,21 +625,17 @@ footer {
   background-size: contain;
   vertical-align: middle;
 }
-
 .separador-personalizado::before {
   margin-right: 1rem;
 }
-
 .separador-personalizado::after {
   margin-left: 1rem;
 }
-
 /* Modo oscuro */
 .dark-mode .separador-personalizado::before,
 .dark-mode .separador-personalizado::after {
   background-color: rgba(255, 255, 255, 0.2);
 }
-
 /* Imagen centrada (HTML) */
 .separador-personalizado img {
   height: 40px;
@@ -770,7 +643,6 @@ footer {
   object-fit: contain;
   vertical-align: middle;
 }
-
 /* Animación */
 @keyframes aparecer {
   from {
@@ -782,9 +654,6 @@ footer {
     opacity: 0.6;
   }
 }
-
-
-
 #quien-soy .foto img {
   width: 220px;
   height: 220px;
@@ -796,11 +665,9 @@ footer {
   box-shadow: none;
   transition: transform 0.3s ease;
 }
-
 #quien-soy .foto img:hover {
   transform: scale(1.05);
 }
-
 /* === Media Queries Responsive === */
 @media (max-width: 768px) {
   .seccion-flex {
@@ -808,69 +675,41 @@ footer {
     gap: 1.5rem;
     text-align: center;
   }
-
   .seccion-flex .texto,
   .seccion-flex .foto {
     flex: 1 1 100%;
     max-width: 100%;
   }
-
   .seccion-flex .foto img {
     max-width: 90%;
     height: auto;
   }
-
   p, li, .btn-turno, .btn-instagram {
     font-size: 1rem;
     line-height: 1.4;
   }
-
   h1, h2, h3 {
     font-size: 1.4rem;
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
   }
-
   .logo {
     max-width: 180px;
   }
-
   section {
     padding: 0.5rem 0.5rem;
     margin-bottom: 0.3rem !important;
   }
-
-  .btn-canjes-flotante {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
-    bottom: 80px;
-    right: 10px;
-    border-radius: 25px;
-    max-width: 110px;
-    color: transparent;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .btn-canjes-flotante::before {
-    content: "Colab🤝canje";
-    color: var(--negro-suave);
-    font-weight: bold;
-  }
-
   #turno,
   #cuidados {
     width: 90%;
     border-radius: 16px;
   }
-
   #turno .contenido-turno,
   #cuidados .contenido-cuidados {
     width: 100%;
     padding: 1rem;
   }
-
   #turno .turno-texto,
   #cuidados .contenido-cuidados p,
   #turno .turno-lista,
@@ -880,34 +719,259 @@ footer {
     padding: 0 1rem;
     line-height: 1.4;
   }
-
   .carrusel .galeria img {
     width: 85vw;
   }
-
   .carrusel button {
     font-size: 1.5rem;
     padding: 0.3rem 0.7rem;
   }
 }
-
 .contenido-quien-soy {
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex: 1;
 }
-
 .botones-instagram {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
   margin-top: 1rem;
 }
-
 @media (min-width: 768px) {
   .botones-instagram {
     flex-direction: row;
     gap: 1rem;
+  }
+}
+.boton-latido {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: var(--rosa);
+  color: var(--negro-suave);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 25px;
+  font-size: 1rem;
+  animation: latido 1.5s infinite;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+.boton-latido:hover {
+  background-color: var(--celeste);
+  transform: scale(1.05);
+}
+@keyframes latido {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.08); }
+  50% { transform: scale(0.96); }
+  75% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+/* ===== Estilo móvil para la sección "¿Quién soy?" ===== */
+@media (max-width: 768px) {
+  /* Forzar columna y orden */
+  #quien-soy .seccion-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  /* Foto primero solo si querés mantenerla */
+  #quien-soy .foto {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* Contenido (párrafo + videos + botones) */
+  #quien-soy .contenido-quien-soy {
+    order: 2;
+    width: 100%;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  #quien-soy .contenido-quien-soy p {
+    order: 1;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+/* === Videos sección ¿Quién Soy? === */
+#quien-soy .videos-quien-soy {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: visible;
+}
+/* Contenedor del video o imagen previa */
+.video-wrapper {
+  position: relative;
+  width: 300px;
+  max-width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+/* Imagen previa: se ve completa, sin recortes */
+.video-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Muestra la imagen entera */
+  display: block;
+  border-radius: 12px;
+  background-color: transparent;
+  z-index: 1;
+  position: relative;
+  border: 3px solid var(--celeste);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+}
+
+/* Efecto hover como en el carrusel */
+.video-wrapper img:hover {
+  transform: rotate(-1deg) scale(1.03);
+}
+/* Video oculto por defecto, con mismos estilos visuales */
+.video-wrapper video.video-real {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  border: 3px solid var(--celeste);
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, opacity 0.5s ease;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+/* Video visible cuando se activa */
+.video-wrapper video.video-real.mostrar {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+  object-fit: cover; /* Si preferís que se vea completo como la imagen, podés cambiar a 'contain' */
+}
+/* Hover en video */
+.video-wrapper video.video-real:hover {
+  transform: rotate(-1deg) scale(1.03);
+}
+/* RESPONSIVE: Mobile */
+@media (max-width: 768px) {
+  #quien-soy .videos-quien-soy {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .video-wrapper {
+    width: 85vw;
+  }
+}
+/* Video de fondo (humo) */
+.video-wrapper video.video-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  border-radius: 12px;
+  opacity: 0.8; /* Podés ajustar esto para que el humo sea más o menos visible */
+}
+.contenido-quien-soy .boton-latido {
+  background: var(--rosa);
+  color: var(--negro-suave);
+  font-weight: bold;
+  padding: 1rem 1rem;
+  border-radius: 50px;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  margin: 1rem auto 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.2s, background 0.3s;
+}
+
+.contenido-quien-soy .boton-latido:hover,
+.contenido-quien-soy .boton-latido:focus {
+  background-color: var(--celeste);
+  transform: scale(1.05);
+  outline: none;
+}
+
+
+
+@media (max-width: 768px) {
+  /* que se ordene en columna */
+  .seccion-flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* El título lo dejamos arriba, no está dentro de seccion-flex */
+  
+  /* Ordenar hijos de seccion-flex */
+  .foto {
+    order: 2; /* queremos que la imagen esté segundo */
+  }
+
+  .contenido-quien-soy {
+    display: flex;
+    flex-direction: column;
+    order: 3;
+  }
+
+  /* Dentro de contenido-quien-soy: separar el texto, videos y botones */
+  .contenido-quien-soy > p {
+    order: 1;
+  }
+  .contenido-quien-soy > .videos-quien-soy {
+    order: 3;
+  }
+  .contenido-quien-soy > .botones-instagram {
+    order: 4;
+  }
+
+  /* Pero el botón "canje" está dentro .foto, queremos que quede entre texto y videos,
+     así que lo sacamos de .foto con posición estática y reubicamos */
+
+  /* Primero, quitamos el botón de .foto en el flujo */
+  .foto .boton-latido {
+    order: 0; /* Lo sacamos para moverlo con position */
+    position: relative;
+    display: block;
+    margin: 1rem 0;
+  }
+
+  /* Ahora movemos el botón canje justo después del texto dentro contenido-quien-soy */
+  .contenido-quien-soy {
+    position: relative;
+  }
+  .contenido-quien-soy .boton-latido {
+    order: 2;
   }
 }

@@ -9,7 +9,6 @@
 <link rel="icon" href="multimedia/fresco logo.png" type="image/png">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
 <body>
 
@@ -52,18 +51,55 @@
         Hago tatuajes con alma y recetas con estilo. Podés visitar mi instagram de tatuajes o el de mis recetas de cocina. <br>
         Si querés tatuarte, colaboración o canje: hablame.
       </p>
+      <a href="https://www.instagram.com/rip.fresco" target="_blank" class="boton-latido">
+        Canjes o colaboraciones
+      </a>
+      <!-- Videos agregados -->
+<div class="videos-quien-soy">
+  <div class="video-wrapper">
+    <img src="multimedia/img-bruschetta.jpeg" alt="Estadísticas del video Bruschetta" class="video-thumbnail">
+    <video class="video-real" controls>
+      <source src="multimedia/bruschetta.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+    <video class="video-fondo" autoplay muted loop playsinline>
+      <source src="multimedia/humo.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+  </div>
 
+  <div class="video-wrapper">
+    <img src="multimedia/img-fideos.jpeg" alt="Estadísticas del video Fideo moñito" class="video-thumbnail">
+    <video class="video-real" controls>
+      <source src="multimedia/fideo moñito.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+    <video class="video-fondo" autoplay muted loop playsinline>
+      <source src="multimedia/humo.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+  </div>
+
+  <div class="video-wrapper">
+    <img src="multimedia/img-milanguche.jpeg" alt="Estadísticas del video Milanguche" class="video-thumbnail">
+    <video class="video-real" controls>
+      <source src="multimedia/milanguche.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+    <video class="video-fondo" autoplay muted loop playsinline>
+      <source src="multimedia/humo.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+  </div>
+</div>
+      <!-- Botones Instagram reubicados -->
       <div class="botones-instagram">
-        <a href="https://instagram.com/tu_tatuajes" target="_blank" class="btn-instagram">Instagram Tatuajes</a>
-        <a href="https://instagram.com/tu_recetas" target="_blank" class="btn-instagram">Instagram Recetas</a>
+        <a href="https://instagram.com/fresco.ttt" target="_blank" class="btn-instagram">Instagram Tatuajes</a>
+        <a href="https://instagram.com/rip.fresco" target="_blank" class="btn-instagram">Instagram Recetas</a>
       </div>
     </div>
-
   </div>
 </section>
-
-
-
 
 <div class="separador-personalizado">
   <img src="multimedia/maquina-png.webp" alt="Separador icono" />
@@ -153,7 +189,6 @@
   </div>
 </section>
 
-
 <div class="separador-personalizado">
   <img src="multimedia/maquina-png.webp" alt="Separador icono" />
 </div>
@@ -169,12 +204,10 @@
       Para consultar precios o pedir turno, escribinos por Instagram y no olvides incluir:
     </p>
     <ul class="turno-lista tips-con-hoja">
-  <li>De qué tamaño te gustaría el tattoo</li>
-  <li>Diseño (foto o dibujo) o descripción del mismo.</li>
-  <li>Lugar del cuerpo donde lo querés</li>
-</ul>
-
-
+      <li>De qué tamaño te gustaría el tattoo</li>
+      <li>Diseño (foto o dibujo) o descripción del mismo.</li>
+      <li>Lugar del cuerpo donde lo querés</li>
+    </ul>
 
     <a href="https://instagram.com/fresco.ttt" target="_blank" class="btn-instagram">
       Enviar mensaje en Instagram
@@ -182,12 +215,23 @@
   </div>
 </section>
 
-
-
 <footer>
   © 2025 Original • Fresco ttt 2025.
 </footer>
 
 <script src="scripts.js"></script>
+<script>
+  document.querySelectorAll('.video-wrapper').forEach(wrapper => {
+    const thumbnail = wrapper.querySelector('.video-thumbnail');
+    const video = wrapper.querySelector('.video-real');
+
+    thumbnail.addEventListener('click', () => {
+      thumbnail.style.display = 'none';
+      video.classList.add('mostrar');
+      video.play();
+    });
+  });
+</script>
 </body>
 </html>
+
