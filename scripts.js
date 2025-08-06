@@ -44,16 +44,31 @@ document.querySelectorAll('.carrusel').forEach(carrusel => {
 // === MENÚ HAMBURGUESA con video de fondo ===
 const menuToggle = document.getElementById('menu-toggle');
 const navLinks = document.getElementById('nav-links');
-const videoHumo = document.getElementById('video-humo-menu'); // Nuevo: referencia al video
+const videoHumo = document.getElementById('video-humo-menu'); // referencia al video de humo
 
 menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-  const menuAbierto = navLinks.classList.contains('show');
-  document.body.style.overflow = menuAbierto ? 'hidden' : '';
+  const menuYaAbierto = navLinks.classList.contains('show');
 
-  // Mostrar/ocultar el video de humo
-  if (videoHumo) {
-    videoHumo.style.display = menuAbierto ? 'block' : 'none';
+  if (!menuYaAbierto) {
+    // Primero scrollea arriba instantáneamente
+    window.scrollTo({ top: 0, behavior: 'auto' });
+
+    // Luego abre el menú
+    navLinks.classList.add('show');
+    document.body.style.overflow = 'hidden';
+
+    // Muestra el video de humo si está presente
+    if (videoHumo) {
+      videoHumo.style.display = 'block';
+    }
+  } else {
+    // Cierra el menú
+    navLinks.classList.remove('show');
+    document.body.style.overflow = '';
+
+    if (videoHumo) {
+      videoHumo.style.display = 'none';
+    }
   }
 });
 
@@ -63,7 +78,6 @@ document.querySelectorAll('#nav-links a').forEach(link => {
     navLinks.classList.remove('show');
     document.body.style.overflow = '';
 
-    // Ocultar el video de humo
     if (videoHumo) {
       videoHumo.style.display = 'none';
     }
@@ -92,6 +106,7 @@ toggleBtn.addEventListener('click', () => {
   localStorage.setItem('theme', isNowDark ? 'dark' : 'light');
   toggleBtn.setAttribute('aria-pressed', isNowDark);
 });
+
 // === Solo un video se reproduce a la vez en #quien-soy ===
 const videos = document.querySelectorAll('#quien-soy video');
 
@@ -103,7 +118,6 @@ videos.forEach(video => {
         otherVideo.muted = true;
       }
     });
-    // Asegura que el actual tenga sonido
-    video.muted = false;
+    video.muted = false; // El video actual tiene sonido
   });
 });
