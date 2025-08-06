@@ -113,6 +113,7 @@ li {
   overflow: hidden;
   width: 100%;
   margin: 0 auto;
+  z-index: 1;
 }
 .carrusel .galeria {
   display: flex;
@@ -315,11 +316,23 @@ li {
 }
 /* === Footer === */
 footer {
-  background: var(--marron);
   text-align: center;
-  padding: 2rem;
-  color: var(--negro-suave);
+  padding: 2rem 1rem;
   font-size: 0.9rem;
+  background: var(--negro-suave); /* o el color que uses */
+  color: var(--blanco); /* o similar */
+}
+footer a {
+  color: var(--rosa);
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+footer a:hover {
+  color: var(--celeste); /* o el color que prefieras */
+}
+footer a i {
+  margin-right: 0.3rem;
 }
 /* === Navbar === */
 .navbar {
@@ -333,7 +346,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
-  z-index: 1000;
+  z-index: 9999;
 }
 .menu-toggle {
   font-size: 2rem;
@@ -352,7 +365,7 @@ footer {
   left: 0;
   width: 100%;
   height: calc(100vh - 60px); /* ocupa todo menos el header */
-  background: var(--negro-suave);
+  background: rgba(0, 0, 0, 0.9); /* fondo translúcido */
   z-index: 999;
   padding: 2rem 0;
   gap: 1rem;
@@ -458,7 +471,11 @@ footer {
 }
 @media (max-width: 600px) {
   .carrusel .galeria img {
-    width: 85vw;
+    width: 70vw;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
   }
   .carrusel button {
     font-size: 1.5rem;
@@ -720,7 +737,7 @@ footer {
     line-height: 1.4;
   }
   .carrusel .galeria img {
-    width: 85vw;
+    width: 80vw;
   }
   .carrusel button {
     font-size: 1.5rem;
@@ -904,14 +921,14 @@ footer {
   background: var(--rosa);
   color: var(--negro-suave);
   font-weight: bold;
-  padding: 1rem 1rem;
+  padding: 0.5rem 0.5rem;
   border-radius: 50px;
   border: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
   cursor: pointer;
   text-decoration: none;
   display: block;
-  margin: 1rem auto 0;
+  margin: 0.5rem auto 2rem; /* <-- este valor aumentó */
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   transition: transform 0.2s, background 0.3s;
 }
@@ -932,19 +949,15 @@ footer {
     flex-direction: column;
   }
 
-  /* El título lo dejamos arriba, no está dentro de seccion-flex */
-  
   /* Ordenar hijos de seccion-flex */
   .foto {
     order: 2; /* queremos que la imagen esté segundo */
   }
-
   .contenido-quien-soy {
     display: flex;
     flex-direction: column;
     order: 3;
   }
-
   /* Dentro de contenido-quien-soy: separar el texto, videos y botones */
   .contenido-quien-soy > p {
     order: 1;
@@ -955,10 +968,6 @@ footer {
   .contenido-quien-soy > .botones-instagram {
     order: 4;
   }
-
-  /* Pero el botón "canje" está dentro .foto, queremos que quede entre texto y videos,
-     así que lo sacamos de .foto con posición estática y reubicamos */
-
   /* Primero, quitamos el botón de .foto en el flujo */
   .foto .boton-latido {
     order: 0; /* Lo sacamos para moverlo con position */
@@ -966,12 +975,28 @@ footer {
     display: block;
     margin: 1rem 0;
   }
-
   /* Ahora movemos el botón canje justo después del texto dentro contenido-quien-soy */
   .contenido-quien-soy {
     position: relative;
   }
   .contenido-quien-soy .boton-latido {
     order: 2;
+  }
+}
+@media (max-width: 600px) {
+  .contenido-quien-soy .video {
+    width: 85vw;
+    max-width: 400px;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 10px;
+  }
+
+}
+@media (max-width: 768px) {
+  .separador-personalizado {
+    margin: 2rem auto 1rem; /* Más separación arriba en mobile */
+    height: auto;           /* Dejá que se ajuste al contenido */
+    padding: 0.5rem 0;      /* Opcional: da más respiro al separador */
   }
 }

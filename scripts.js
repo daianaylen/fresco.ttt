@@ -14,14 +14,14 @@ document.querySelectorAll('.carrusel').forEach(carrusel => {
   if (prevBtn && galeria) {
     prevBtn.addEventListener('click', () => {
       galeria.scrollBy({ left: -galeria.clientWidth * 0.8, behavior: 'smooth' });
-      clearInterval(autoSlide); // detiene el autoslide
+      clearInterval(autoSlide);
     });
   }
 
   if (nextBtn && galeria) {
     nextBtn.addEventListener('click', () => {
       galeria.scrollBy({ left: galeria.clientWidth * 0.8, behavior: 'smooth' });
-      clearInterval(autoSlide); // detiene el autoslide
+      clearInterval(autoSlide);
     });
   }
 
@@ -31,7 +31,6 @@ document.querySelectorAll('.carrusel').forEach(carrusel => {
     startAutoSlide();
   }
 
-  // Asegurar clickeabilidad de botones
   if (prevBtn) {
     prevBtn.style.pointerEvents = 'auto';
     prevBtn.style.zIndex = '9999';
@@ -42,13 +41,20 @@ document.querySelectorAll('.carrusel').forEach(carrusel => {
   }
 });
 
-// === MENÚ HAMBURGUESA ===
+// === MENÚ HAMBURGUESA con video de fondo ===
 const menuToggle = document.getElementById('menu-toggle');
 const navLinks = document.getElementById('nav-links');
+const videoHumo = document.getElementById('video-humo-menu'); // Nuevo: referencia al video
 
 menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('show');
-  document.body.style.overflow = navLinks.classList.contains('show') ? 'hidden' : '';
+  const menuAbierto = navLinks.classList.contains('show');
+  document.body.style.overflow = menuAbierto ? 'hidden' : '';
+
+  // Mostrar/ocultar el video de humo
+  if (videoHumo) {
+    videoHumo.style.display = menuAbierto ? 'block' : 'none';
+  }
 });
 
 // Cerrar menú al hacer clic en un enlace
@@ -56,6 +62,11 @@ document.querySelectorAll('#nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('show');
     document.body.style.overflow = '';
+
+    // Ocultar el video de humo
+    if (videoHumo) {
+      videoHumo.style.display = 'none';
+    }
   });
 });
 
@@ -64,7 +75,6 @@ const toggleBtn = document.getElementById('dark-mode-toggle');
 const icon = document.getElementById('theme-icon');
 const htmlBody = document.body;
 
-// Inicializar modo según localStorage
 const isDark = localStorage.getItem('theme') === 'dark';
 if (isDark) {
   htmlBody.classList.add('dark-mode');
@@ -75,11 +85,25 @@ if (isDark) {
   toggleBtn.setAttribute('aria-pressed', 'false');
 }
 
-// Alternar modo
 toggleBtn.addEventListener('click', () => {
   htmlBody.classList.toggle('dark-mode');
   const isNowDark = htmlBody.classList.contains('dark-mode');
   icon.textContent = isNowDark ? '☀️' : '🌙';
   localStorage.setItem('theme', isNowDark ? 'dark' : 'light');
   toggleBtn.setAttribute('aria-pressed', isNowDark);
+});
+// === Solo un video se reproduce a la vez en #quien-soy ===
+const videos = document.querySelectorAll('#quien-soy video');
+
+videos.forEach(video => {
+  video.addEventListener('play', () => {
+    videos.forEach(otherVideo => {
+      if (otherVideo !== video) {
+        otherVideo.pause();
+        otherVideo.muted = true;
+      }
+    });
+    // Asegura que el actual tenga sonido
+    video.muted = false;
+  });
 });
