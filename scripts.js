@@ -120,4 +120,4 @@ videos.forEach(video => {
     });
     video.muted = false; // El video actual tiene sonido
   });
-});
+});  
