@@ -181,6 +181,7 @@ li {
   margin: 1rem auto 0;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   transition: transform 0.2s, background 0.3s;
+  text-align: center;
 }
 .btn-turno:hover {
   background: var(--rosa);
